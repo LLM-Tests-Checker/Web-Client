@@ -1,0 +1,23 @@
+@import '../../styles/vars.module.scss';
+
+.button {
+    padding: $padding-big;
+    margin: $null;
+    border-radius: $border-radius;
+    background: $helpy-color;
+    border-width: $null;
+    color: $white-color;
+    height: $button-height;
+
+    &[data-btype=default] {
+        background: $primary-color;
+    }
+
+    &[data-btype=gradient] {
+        background: $universal-gradient;
+    }
+
+    &:hover {
+        opacity: $opacity;
+    }
+}
