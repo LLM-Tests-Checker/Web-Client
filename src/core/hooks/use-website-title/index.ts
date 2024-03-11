@@ -1,6 +1,7 @@
+import {PROJECT_NAME} from '../../constants/common';
 import {Title} from './types';
 
-const DEFAULT = 'LLM Test Checker';
+const DEFAULT = PROJECT_NAME;
 
 export function useWebsiteTitle(title?: Title) {
     if (!title) {

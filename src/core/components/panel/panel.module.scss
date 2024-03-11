@@ -1,0 +1,12 @@
+@import '../../styles/vars.module.scss';
+
+.panel {
+    border-radius: $border-radius;
+    background-color: $section-color-grey;
+    margin: $margin-big;
+    padding: $padding-large;
+
+    &[data-color=true] {
+        background-color: $section-color;
+    }
+}

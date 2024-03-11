@@ -14,16 +14,21 @@ const cn = classnames.bind(s);
 const bb = 'bubble';
 
 interface Props {
+    hasSideBubbles?: boolean;
     hasBottomBubble?: boolean;
 }
 
-export const Bubbles = memo<Props>(function Bubbles({hasBottomBubble}: Props) {
+export const Bubbles = memo<Props>(function Bubbles({hasBottomBubble, hasSideBubbles}: Props) {
     return (
         <>
-            <img className={cn('bubble', [`${bb}-left-first`])} src={leftFirst} />
-            <img className={cn('bubble', [`${bb}-left-second`])} src={leftSecond} />
-            <img className={cn('bubble', [`${bb}-right-first`])} src={rightFirst} />
-            <img className={cn('bubble', [`${bb}-right-second`])} src={rightSecond} />
+            {hasSideBubbles && (
+                <>
+                    <img className={cn('bubble', [`${bb}-left-first`])} src={leftFirst} />
+                    <img className={cn('bubble', [`${bb}-left-second`])} src={leftSecond} />
+                    <img className={cn('bubble', [`${bb}-right-first`])} src={rightFirst} />
+                    <img className={cn('bubble', [`${bb}-right-second`])} src={rightSecond} />
+                </>
+            )}
             {hasBottomBubble && (
                 <img className={cn('bubble', [`${bb}-bottom`])} src={bottom} />
             )}
