@@ -1,13 +1,15 @@
 import {browserStorageWorker as bsWorker} from '../../storage/browser/model';
 import {ACCESS_TOKEN_H, REFRESH_TOKEN_H, TRACE_ID_H} from '../constants/headers';
-import {FullResponse, Method} from '../types/common';
+import {FullResponse, Indexed, Method} from '../types/common';
 
 export async function smartRequest(
     url: string,
     method: Method,
-    body?: string
+    body?: Indexed,
 ): Promise<FullResponse> {
-    const addBody = method === 'GET' ? {} : {body};
+    const addBody = method === 'GET' 
+        ? {} 
+        : {body: JSON.stringify(body)};
     
     return fetch(url, {
         method,
