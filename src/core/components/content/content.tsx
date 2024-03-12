@@ -1,14 +1,14 @@
 import React from 'react';
 
-import s from './layout.module.scss';
+import s from './content.module.scss';
 
 interface Props {
     children: React.ReactNode;
 }
 
-export function Layout({children}: Props) {
+export function Content({children}: Props) {
     return (
-        <main className={s.layout}>
+        <main className={s.content}>
             {children}
         </main>
     );

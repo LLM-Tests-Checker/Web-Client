@@ -1,55 +1,52 @@
-export type GetMyTestsRequest = {
+import {TestId, UUID} from '../../../core/types/common';
+import {CheckResult, CheckStatus, RawTest, Test} from '../../../core/types/definitions';
 
+export type GetMyTestsRequest = {
+    query: {
+        'page-number'?: number,
+        'page-size'?: number,
+    },
 };
 
 export type GetTestByIdRequest = {
-
+    query: TestId,
 };
 
 export type CreateTestRequest = {
-
+    body: RawTest,
 };
 
 export type DeleteTestByIdRequest = {
-
+    path: TestId,
 };
 
 export type LlmLaunchTestByIdRequest = {
-
+    path: TestId,
+    body: {
+        llm_slug: string,
+    },
 };
 
 export type LlmGetTestStatusByIdRequest = {
-
+    path: TestId,
 };
 
 export type LlmGetTestResultByIdRequest = {
-    
+    path: TestId,
 };
 
-export type GetMyTestsResponse = {
+export type GetMyTestsResponse = Test[];
 
-};
+export type GetTestByIdResponse = Test;
 
-export type GetTestByIdResponse = {
+export type CreateTestResponse = Test;
 
-};
-
-export type CreateTestResponse = {
-
-};
-
-export type DeleteTestByIdResponse = {
-
-};
+export type DeleteTestByIdResponse = null;
 
 export type LlmLaunchTestByIdResponse = {
-
+    launch_identifier: UUID,
 };
 
-export type LlmGetTestStatusByIdResponse = {
+export type LlmGetTestStatusByIdResponse = CheckStatus[];
 
-};
-
-export type LlmGetTestResultByIdResponse = {
-    
-};
+export type LlmGetTestResultByIdResponse = CheckResult[];
