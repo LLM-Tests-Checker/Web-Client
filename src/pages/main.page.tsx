@@ -10,16 +10,17 @@ import { HRLine } from '../core/components/hrline/hrline';
 export function Main() {
     return (
         <>
-            <Bubbles />
+            <Bubbles hasBottomBubble hasSideBubbles />
             <Button onClick={() => console.log('1')}>Pop</Button>
             <Button onClick={() => console.log('2')}>Popopopopopopoppopopop</Button>
             <Button onClick={() => console.log('3')} btype={ButtonType.Gradient}>Check</Button>
             <HRLine />
-            <Modal onClose={() => {}}>
+            {/* <Modal onClose={() => {}}>
                 <Panel>
                 Panel
                 </Panel>
-            </Modal>
+            </Modal> */}
+
         </>
     );
 }

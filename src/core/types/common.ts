@@ -31,3 +31,30 @@ export type Status =
     | 'COMPLETED'
     | 'ERROR'
     | 'UNDEFINED';
+
+export type Method =
+    | 'GET'
+    | 'POST'
+    | 'PUT'
+    | 'PATCH'
+    | 'DELETE';
+
+export type Indexed = {
+    [key: string]: any,
+};
+
+export type FullRequest = {
+    body?: Indexed,
+    query?: Indexed,
+};
+
+export type ApiError = {
+    error_code: number,
+    error_message: string,
+};
+
+export type FullResponse = {
+    headers: Indexed,
+    body?: Indexed,
+    error?: ApiError,
+};

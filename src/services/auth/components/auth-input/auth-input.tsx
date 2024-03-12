@@ -1,1 +1,9 @@
-export {};
+import React from 'react';
+
+interface Props {
+    
+}
+
+export function Input() {
+
+}

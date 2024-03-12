@@ -1,5 +1,15 @@
 class AuthAPI {
+    public async signIn() {
 
+    }
+
+    public async signUp() {
+        
+    }
+
+    public async refreshToken() {
+
+    }
 }
 
-export default AuthAPI;
+export const authAPI = new AuthAPI();

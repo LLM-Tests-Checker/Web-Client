@@ -1,6 +1,7 @@
 import React from 'react';
 
 import closeButton from './assets/close-button.svg';
+import modalHead from './assets/modal-head.svg';
 
 import s from './modal.module.scss';
 
@@ -15,6 +16,7 @@ export function Modal({children, onClose}: Props) {
             <div className={s.modalForegroundBlur} />
             <div className={s.modal}>
                 <img className={s.close} src={closeButton} />
+                <img className={s.head} src={modalHead} />
                 {children}
             </div>
         </>
