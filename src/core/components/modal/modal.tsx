@@ -15,7 +15,7 @@ export function Modal({children, onClose}: Props) {
         <>
             <div className={s.modalForegroundBlur} />
             <div className={s.modal}>
-                <img className={s.close} src={closeButton} />
+                <img className={s.close} src={closeButton} onClick={onClose} />
                 <img className={s.head} src={modalHead} />
                 {children}
             </div>

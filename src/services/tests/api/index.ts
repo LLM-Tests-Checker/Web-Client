@@ -11,12 +11,12 @@ class TestsAPI {
         return api.get(URL_ALL, {query: req});
     }
 
-    public getTestById() {
-
+    public getTestById(req: T.GetTestByIdRequest) {
+        return api.get(`${BASE_URL}/${req.path.test_id}/get`, {});
     }
 
-    public createTest() {
-
+    public createTest(req: T.CreateTestRequest) {
+        return api.put(`${BASE_URL}/create`, {})
     }
 
     public deleteTestById() {

@@ -32,3 +32,11 @@
 
     justify-content: flex-end;
 }
+
+.link {
+    color: $white-color;
+
+    &:hover {
+        color: silver;
+    }
+}

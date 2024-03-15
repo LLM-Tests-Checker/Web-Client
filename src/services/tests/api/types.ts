@@ -9,7 +9,7 @@ export type GetMyTestsRequest = {
 };
 
 export type GetTestByIdRequest = {
-    query: TestId,
+    path: TestId,
 };
 
 export type CreateTestRequest = {

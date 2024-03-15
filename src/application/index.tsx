@@ -13,7 +13,6 @@ const store = createStore(rootReducer);
 function EntryPoint() {
   return (
     <Provider store={store}>
-      <Header />
       <Router />
     </Provider>
   );
