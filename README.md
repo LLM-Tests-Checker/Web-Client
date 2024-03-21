@@ -1,8 +1,8 @@
 # LLM Test Checker
 
-This is an application which is client for our service. 
-Web app has built with React framework, using service-sliced architecture.
-This app is in hosts white-list for mono-backend.
+This is an application that is a client for our service. 
+The web application is built using the React framework, using a service-separated architecture.
+This application is on the white list of hosts for the mono backend.
 
 ### Layouts
 
