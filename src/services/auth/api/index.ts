@@ -6,7 +6,6 @@ const BASE_URL = `${SERVER_DOMAIN}/api/v1/auth`;
 
 class AuthAPI {
     public async signIn(req: SignInRequest) {
-        console.log('y')
         return api.post(`${BASE_URL}/sign-in`, {body: req});
     }
 

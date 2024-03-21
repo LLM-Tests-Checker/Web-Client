@@ -1,5 +1,6 @@
 import {SERVER_DOMAIN} from '../../../core/constants/common';
 import {api} from '../../../core/models/api';
+import { FullResponse } from '../../../core/types/common';
 import * as T from './types';
 
 const URL_ALL = `${SERVER_DOMAIN}/api/v1/tests/my`;
@@ -8,7 +9,9 @@ const BASE_URL = `${SERVER_DOMAIN}/api/v1/test`;
 
 class TestsAPI {
     public getMyTests(req: T.GetMyTestsRequest) {
-        return api.get(URL_ALL, {query: req});
+        return api.get(URL_ALL, {query: req.query}) as (
+            Promise<FullResponse<T.GetMyTestsResponse>>
+        );
     }
 
     public getTestById(req: T.GetTestByIdRequest) {
@@ -36,4 +39,4 @@ class TestsAPI {
     }
 }
 
-export default TestsAPI;
+export const testsApi = new TestsAPI();

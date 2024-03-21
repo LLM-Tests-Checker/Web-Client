@@ -1,11 +1,18 @@
 import {Indexed} from '../types/common';
 
 export function makeQueryParams(query?: Indexed): string {
+    console.log(query)
+
     if (!query) {
         return '';
     }
 
-    return Object.entries(query).reduce((acc: string, [key, value]) => {
+    const props = Object.entries(query);
+    if (!props?.length) {
+        return '';
+    }
+
+    return props.reduce((acc: string, [key, value]) => {
         return `${acc}${key}=${JSON.stringify(value)}&`;
     }, '?');
 }

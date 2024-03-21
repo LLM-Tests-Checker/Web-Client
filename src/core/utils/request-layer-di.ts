@@ -6,7 +6,7 @@ export async function smartRequest(
     url: string,
     method: Method,
     body?: Indexed,
-): Promise<FullResponse> {
+): Promise<any> {
     const addBody = method === 'GET' 
         ? {} 
         : {body: JSON.stringify(body)};
@@ -17,14 +17,15 @@ export async function smartRequest(
             [TRACE_ID_H]: bsWorker.getTraceId(),
             [ACCESS_TOKEN_H]: bsWorker.getAccessToken() || '',
             [REFRESH_TOKEN_H]: bsWorker.getAccessToken() || '',
+            'Content-type': 'application/json'
         },
         ...addBody,
     })
-        .then(response => {
+        .then(async response => {
             if (response?.ok && [200, 201].includes(response?.status)) {
                 return {
                     headers: response.headers,
-                    body: response.json(),
+                    body: await response.json(),
                     error: undefined,
                 };
             }
@@ -37,5 +38,5 @@ export async function smartRequest(
                 body: undefined,
                 error,
             };
-        }) as Promise<FullResponse>;
+        }) as Promise<FullResponse<any>>;
 }

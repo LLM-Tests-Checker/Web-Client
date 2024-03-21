@@ -53,8 +53,8 @@ export type ApiError = {
     error_message: string,
 };
 
-export type FullResponse = {
+export type FullResponse<T> = {
     headers: Indexed,
-    body?: Indexed,
+    body?: T,
     error?: ApiError,
 };
