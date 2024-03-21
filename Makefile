@@ -10,3 +10,6 @@ create-service:
 
 delete-service:
 	echo "todo"
+
+run:
+	npm start
