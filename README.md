@@ -4,6 +4,10 @@ This is an application witch is client for our service.
 Web app has built with React framework, using service-sliced architecture.
 This app is in hosts white-list for mono-backend.
 
+### Layouts
+
+- https://www.figma.com/file/FgAqhM6kuIc6RzoWw44OMj/LLM-Tests-Checker?type=design&mode=design&t=oRRMpQ3FrwWAWpzN-0
+
 
 ### Setup
 
